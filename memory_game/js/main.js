@@ -10,32 +10,58 @@ console.log("User flipped " + cardOne);
 console.log("User flipped " + cardThree);
 //save changes to main.js*/
 
-const cards = ["queen", "queen", "king", "king"];
+//const cards = ["queen", "queen", "king", "king"];
+
+const cards = [
+{
+rank: "queen",
+suit: "hearts",
+cardImage: "images/queen-of-hearts.png"
+},
+
+{
+rank: "queen",
+suit: "diamonds",
+cardImage: "images/queen-of-diamonds.png"
+},
+
+{
+rank: "king",
+suit: "hearts",
+cardImage: "images/king-of-hearts.png"
+},
+
+{
+rank: "king",
+suit: "diamonds",
+cardImage: "images/king-of-diamonds.png"
+}
+
+];
+
+
 const cardsInPlay = [];
 
 var checkForMatch = function(){
 	if (cardsInPlay[0] === cardsInPlay[1]) {
- 	 	console.log("You found a match!");
+ 	 	alert("You found a match!");
 	} else {
-	  console.log("Sorry, try again.");
+	  	alert("Sorry, try again.");
 	}
 };	
 
 var flipCard = function (cardId) {
 
-	console.log("User flipped " + cards[cardId]);
-	cardsInPlay.push(cards[cardId]);
+	console.log("User flipped " + cards[cardId].rank);
+	cardsInPlay.push(cards[cardId].rank);
+	console.log(cards[cardId].cardImage);
+	console.log(cards[cardId].suit);
 };
 
 
 flipCard(0);
 flipCard(2);
 checkForMatch();
-
-//function that will store all steps related to selecting, or flipping over, a card
-
-//function to group together the logic to check to see if the two cards that the user has flipped over match each other
-
 
 
 /*Previous code
